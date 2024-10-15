@@ -8,7 +8,7 @@ This Laravel package provides an easy-to-use interface for sending verification 
 1. Install the package via Composer:
 
 ```bash
-composer require your-vendor/telegram-gateway
+composer require composer require somarkesen/telegram-gateway
 ```
 
 2. Publish the configuration file:
