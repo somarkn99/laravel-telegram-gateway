@@ -8,13 +8,13 @@ This Laravel package provides an easy-to-use interface for sending verification 
 1. Install the package via Composer:
 
 ```bash
-composer require composer require somarkesen/telegram-gateway
+composer require somarkesen/telegram-gateway
 ```
 
 2. Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="YourPackage\Providers\TelegramGatewayServiceProvider"
+php artisan vendor:publish --provider="SomarKesen\TelegramGateway\Providers\TelegramGatewayServiceProvider"
 ```
 
 3. Add your Telegram API token in the `.env` file:
@@ -22,6 +22,16 @@ php artisan vendor:publish --provider="YourPackage\Providers\TelegramGatewayServ
 ```bash
 TELEGRAM_API_TOKEN=your-telegram-api-token
 ```
+
+### Obtaining the Telegram API Token:
+To use this package, you need to get an API token from Telegram Gateway.
+
+1. Visit the Telegram Gateway API page: [https://gateway.telegram.org/](https://gateway.telegram.org/).
+2. Log in using your **Telegram phone number**.
+3. After logging in, you will be able to **fund your account** and view your **API token**.
+4. Copy the token and add it to your Laravel `.env` file as shown above.
+
+> Ensure your account is funded and your API token is valid, as this token will be required for all API requests.
 
 ## Configuration
 
@@ -42,7 +52,7 @@ return [
 To send a verification message, you can use the `TelegramGateway` facade:
 
 ```php
-use YourPackage\Facades\TelegramGateway;
+use SomarKesen\TelegramGateway\Facades\TelegramGateway;
 
 $response = TelegramGateway::sendVerificationMessage('+1234567890', [
     'code' => '1234',
