@@ -1,0 +1,36 @@
+{
+    "name": "somarkesen/telegram-gateway",
+    "description": "A Laravel package for sending verification codes via Telegram Gateway API",
+    "type": "library",
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0", 
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SomarKesen\\TelegramGateway\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SomarKesen\\TelegramGateway\\Providers\\TelegramGatewayServiceProvider"
+            ],
+            "aliases": {
+                "TelegramGateway": "SomarKesen\\TelegramGateway\\Facades\\TelegramGateway"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Somar Kesen",
+            "email": "kesen.somar.99@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    }
+}
