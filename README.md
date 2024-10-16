@@ -67,12 +67,43 @@ The `sendVerificationMessage` method accepts the following parameters:
 - `ttl` (integer, optional): Time-to-live in seconds for the message before it expires.
 - `callback_url` (string, optional): URL to receive delivery status updates.
 
-### Available Methods
+### Checking Send Ability
 
-- `sendVerificationMessage`: Sends a verification message.
-- `checkSendAbility`: Check if the message can be sent to a phone number.
-- `checkVerificationStatus`: Check the status of a verification message.
-- `revokeVerificationMessage`: Revoke a previously sent verification message.
+To check whether a verification message can be sent to a phone number:
+
+```php
+$response = TelegramGateway::checkSendAbility('+1234567890');
+```
+
+### Checking Verification Status
+
+To check the status of a verification message that was sent previously:
+
+```php
+$response = TelegramGateway::checkVerificationStatus('request-id', '1234');
+```
+
+The `checkVerificationStatus` method accepts:
+- `request_id` (string, required): The unique identifier of the verification request.
+- `code` (string, optional): The code entered by the user. This can verify if the code is valid.
+
+### Revoking a Verification Message
+
+To revoke a previously sent verification message:
+
+```php
+$response = TelegramGateway::revokeVerificationMessage('request-id');
+```
+
+The `revokeVerificationMessage` method accepts:
+- `request_id` (string, required): The unique identifier of the verification request to revoke.
+
+## Available Methods
+
+- **sendVerificationMessage**: Sends a verification message.
+- **checkSendAbility**: Checks if a verification message can be sent to a phone number.
+- **checkVerificationStatus**: Checks the status of a previously sent verification message.
+- **revokeVerificationMessage**: Revokes a previously sent verification message.
 
 ## Testing
 
@@ -81,6 +112,11 @@ To run the tests:
 ```bash
 composer test
 ```
+
+## Credits
+
+- [Somar kesen](https://www.linkedin.com/in/somarkesen/)
+- [Yhya Nesb](https://www.linkedin.com/in/yhya-nesb/)
 
 ## License
 
